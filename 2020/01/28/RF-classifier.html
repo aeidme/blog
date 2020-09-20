@@ -10,14 +10,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An Example of Applied Machine Learning" />
 <meta property="og:description" content="An Example of Applied Machine Learning" />
-<link rel="canonical" href="https://aeidme.github.io/blog/machine%20learning/jupyter/ai/2020/01/28/RF-classifier.html" />
-<meta property="og:url" content="https://aeidme.github.io/blog/machine%20learning/jupyter/ai/2020/01/28/RF-classifier.html" />
+<link rel="canonical" href="https://aeidme.github.io/blog/2020/01/28/RF-classifier.html" />
+<meta property="og:url" content="https://aeidme.github.io/blog/2020/01/28/RF-classifier.html" />
 <meta property="og:site_name" content="Abdullatif Eid’s Blog" />
 <meta property="og:image" content="https://aeidme.github.io/blog/images/confusion.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-01-28T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"An Example of Applied Machine Learning","url":"https://aeidme.github.io/blog/machine%20learning/jupyter/ai/2020/01/28/RF-classifier.html","@type":"BlogPosting","headline":"Will the client subscribe?","dateModified":"2020-01-28T00:00:00-06:00","datePublished":"2020-01-28T00:00:00-06:00","image":"https://aeidme.github.io/blog/images/confusion.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://aeidme.github.io/blog/machine%20learning/jupyter/ai/2020/01/28/RF-classifier.html"},"@context":"https://schema.org"}</script>
+{"description":"An Example of Applied Machine Learning","url":"https://aeidme.github.io/blog/2020/01/28/RF-classifier.html","@type":"BlogPosting","headline":"Will the client subscribe?","dateModified":"2020-01-28T00:00:00-06:00","datePublished":"2020-01-28T00:00:00-06:00","image":"https://aeidme.github.io/blog/images/confusion.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://aeidme.github.io/blog/2020/01/28/RF-classifier.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aeidme.github.io/blog/feed.xml" title="Abdullatif Eid's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
@@ -85,7 +85,7 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/blog/categories/#machine learning">machine learning</a>
+        <a class="category-tags-link" href="/blog/categories/#machine_learning">machine_learning</a>
         &nbsp;
       
         <a class="category-tags-link" href="/blog/categories/#jupyter">jupyter</a>
@@ -132,34 +132,34 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Input-variables:">Input variables: </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Quick-observations:">Quick observations: </a></li>
+<li class="toc-entry toc-h2"><a href="#Quick-observations">Quick observations </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Data-Preparation">Data Preparation </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Dropping-duration-and-contact-columns:">Dropping duration and contact columns: </a></li>
-<li class="toc-entry toc-h2"><a href="#Modifying-'pdays':">Modifying &#39;pdays&#39;: </a></li>
+<li class="toc-entry toc-h2"><a href="#Dropping-duration-and-contact-columns">Dropping duration and contact columns </a></li>
+<li class="toc-entry toc-h2"><a href="#Modifying-'pdays'">Modifying &#39;pdays&#39; </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Data-Analysis:">Data Analysis: </a>
+<li class="toc-entry toc-h1"><a href="#Data-Analysis">Data Analysis </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Importing-additional-libraries">Importing additional libraries </a></li>
 <li class="toc-entry toc-h2"><a href="#Balance,-age,-jobs-and-y?">Balance, age, jobs and y? </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Age-distribution:">Age distribution: </a></li>
-<li class="toc-entry toc-h3"><a href="#Joint-plot-(balance-and-age):">Joint plot (balance and age): </a></li>
-<li class="toc-entry toc-h3"><a href="#Age-and-Subscription:">Age and Subscription: </a></li>
-<li class="toc-entry toc-h3"><a href="#Balance-and-Subscription:">Balance and Subscription: </a></li>
-<li class="toc-entry toc-h3"><a href="#Job-and-Subscription:">Job and Subscription: </a></li>
-<li class="toc-entry toc-h3"><a href="#A-few-conclusions:">A few conclusions: </a></li>
+<li class="toc-entry toc-h3"><a href="#Age-distribution">Age distribution </a></li>
+<li class="toc-entry toc-h3"><a href="#Joint-plot-(balance-and-age)">Joint plot (balance and age) </a></li>
+<li class="toc-entry toc-h3"><a href="#Age-and-Subscription">Age and Subscription </a></li>
+<li class="toc-entry toc-h3"><a href="#Balance-and-Subscription">Balance and Subscription </a></li>
+<li class="toc-entry toc-h3"><a href="#Job-and-Subscription">Job and Subscription </a></li>
+<li class="toc-entry toc-h3"><a href="#A-few-conclusions">A few conclusions </a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Correlation-Heat-Map:">Correlation Heat Map: </a>
+<li class="toc-entry toc-h1"><a href="#Correlation-Heat-Map">Correlation Heat Map </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#What-is-correlation?">What is correlation? </a></li>
-<li class="toc-entry toc-h2"><a href="#A-few-conclusions:">A few conclusions: </a></li>
+<li class="toc-entry toc-h2"><a href="#A-few-conclusions">A few conclusions </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Data-Preparation">Data Preparation </a>
@@ -173,17 +173,17 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h1"><a href="#Random-Forest-&-Tuning">Random Forest &amp; Tuning </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Splitting-into-train-and-test-datasets:">Splitting into train and test datasets: </a></li>
-<li class="toc-entry toc-h2"><a href="#Training-a-Random-Forest-classifier:">Training a Random Forest classifier: </a></li>
+<li class="toc-entry toc-h2"><a href="#Splitting-into-train-and-test-datasets">Splitting into train and test datasets </a></li>
+<li class="toc-entry toc-h2"><a href="#Training-a-Random-Forest-classifier">Training a Random Forest classifier </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Model-Evaluation:">Model Evaluation: </a>
+<li class="toc-entry toc-h1"><a href="#Model-Evaluation">Model Evaluation </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#F-score,-Precision-and-Recall:">F-score, Precision and Recall: </a></li>
+<li class="toc-entry toc-h2"><a href="#F-score,-Precision-and-Recall">F-score, Precision and Recall </a></li>
 <li class="toc-entry toc-h2"><a href="#Receiver-Operating-Characteristic">Receiver Operating Characteristic </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Conclusion:">Conclusion: </a></li>
+<li class="toc-entry toc-h1"><a href="#Conclusion">Conclusion </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -671,19 +671,19 @@ window.onload = wrap_img;
 <li>default: has credit in default? (categorical: 'no','yes','unknown')</li>
 <li>housing: has housing loan? (categorical: 'no','yes','unknown')</li>
 <li>loan: has personal loan? (categorical: 'no','yes','unknown')
-### Related with the last contact of the current campaign:</li>
+### Related with the last contact of the current campaign</li>
 <li>contact: contact communication type (categorical: 'cellular','telephone')</li>
 <li>month: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')</li>
 <li>day_of_week: last contact day of the week (categorical: 'mon','tue','wed','thu','fri')</li>
 <li>duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
-###  Other attributes:</li>
+###  Other attributes</li>
 <li>campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)</li>
 <li>pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)</li>
 <li>previous: number of contacts performed before this campaign and for this client (numeric)</li>
 <li>poutcome: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')</li>
 </ol>
-<h2 id="Quick-observations:">
-<a class="anchor" href="#Quick-observations:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick observations:<a class="anchor-link" href="#Quick-observations:"> </a>
+<h2 id="Quick-observations">
+<a class="anchor" href="#Quick-observations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick observations<a class="anchor-link" href="#Quick-observations"> </a>
 </h2>
 <ol>
 <li>The duration (attribute #11) is to be discarded in order to have a relastic predictive model.</li>
@@ -695,8 +695,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#Data-Preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Preparation<a class="anchor-link" href="#Data-Preparation"> </a>
 </h1>
 <p>In order to perform data analysis, I will skip normalization for a later step and for now just drop the 'duration' column and change the values in 'pdays'.</p>
-<h2 id="Dropping-duration-and-contact-columns:">
-<a class="anchor" href="#Dropping-duration-and-contact-columns:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dropping duration and contact columns:<a class="anchor-link" href="#Dropping-duration-and-contact-columns:"> </a>
+<h2 id="Dropping-duration-and-contact-columns">
+<a class="anchor" href="#Dropping-duration-and-contact-columns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dropping duration and contact columns<a class="anchor-link" href="#Dropping-duration-and-contact-columns"> </a>
 </h2>
 </div>
 </div>
@@ -738,8 +738,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Modifying-'pdays':">
-<a class="anchor" href="#Modifying-'pdays':" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modifying 'pdays':<a class="anchor-link" href="#Modifying-'pdays':"> </a>
+<h2 id="Modifying-'pdays'">
+<a class="anchor" href="#Modifying-'pdays'" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modifying 'pdays'<a class="anchor-link" href="#Modifying-'pdays'"> </a>
 </h2>
 </div>
 </div>
@@ -1017,8 +1017,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Data-Analysis:">
-<a class="anchor" href="#Data-Analysis:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Analysis:<a class="anchor-link" href="#Data-Analysis:"> </a>
+<h1 id="Data-Analysis">
+<a class="anchor" href="#Data-Analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Analysis<a class="anchor-link" href="#Data-Analysis"> </a>
 </h1>
 <p>Seaborn is one of the widely used libraries to perform data visualization. It comes with a lot of helpful functionalities and gives really nice graphics.</p>
 <h2 id="Importing-additional-libraries">
@@ -1056,8 +1056,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#Balance,-age,-jobs-and-y?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance, age, jobs and y?<a class="anchor-link" href="#Balance,-age,-jobs-and-y?"> </a>
 </h2>
 <p>Normally, the goal of this section is to check how much the balance, the age and the job matter in the decision of the client.</p>
-<h3 id="Age-distribution:">
-<a class="anchor" href="#Age-distribution:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Age distribution:<a class="anchor-link" href="#Age-distribution:"> </a>
+<h3 id="Age-distribution">
+<a class="anchor" href="#Age-distribution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Age distribution<a class="anchor-link" href="#Age-distribution"> </a>
 </h3>
 </div>
 </div>
@@ -1098,8 +1098,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Joint-plot-(balance-and-age):">
-<a class="anchor" href="#Joint-plot-(balance-and-age):" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint plot (balance and age):<a class="anchor-link" href="#Joint-plot-(balance-and-age):"> </a>
+<h3 id="Joint-plot-(balance-and-age)">
+<a class="anchor" href="#Joint-plot-(balance-and-age)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint plot (balance and age)<a class="anchor-link" href="#Joint-plot-(balance-and-age)"> </a>
 </h3>
 </div>
 </div>
@@ -1140,8 +1140,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Age-and-Subscription:">
-<a class="anchor" href="#Age-and-Subscription:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Age and Subscription:<a class="anchor-link" href="#Age-and-Subscription:"> </a>
+<h3 id="Age-and-Subscription">
+<a class="anchor" href="#Age-and-Subscription" aria-hidden="true"><span class="octicon octicon-link"></span></a>Age and Subscription<a class="anchor-link" href="#Age-and-Subscription"> </a>
 </h3>
 </div>
 </div>
@@ -1182,8 +1182,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Balance-and-Subscription:">
-<a class="anchor" href="#Balance-and-Subscription:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance and Subscription:<a class="anchor-link" href="#Balance-and-Subscription:"> </a>
+<h3 id="Balance-and-Subscription">
+<a class="anchor" href="#Balance-and-Subscription" aria-hidden="true"><span class="octicon octicon-link"></span></a>Balance and Subscription<a class="anchor-link" href="#Balance-and-Subscription"> </a>
 </h3>
 </div>
 </div>
@@ -1224,8 +1224,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Job-and-Subscription:">
-<a class="anchor" href="#Job-and-Subscription:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Job and Subscription:<a class="anchor-link" href="#Job-and-Subscription:"> </a>
+<h3 id="Job-and-Subscription">
+<a class="anchor" href="#Job-and-Subscription" aria-hidden="true"><span class="octicon octicon-link"></span></a>Job and Subscription<a class="anchor-link" href="#Job-and-Subscription"> </a>
 </h3>
 </div>
 </div>
@@ -1266,8 +1266,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="A-few-conclusions:">
-<a class="anchor" href="#A-few-conclusions:" aria-hidden="true"><span class="octicon octicon-link"></span></a>A few conclusions:<a class="anchor-link" href="#A-few-conclusions:"> </a>
+<h3 id="A-few-conclusions">
+<a class="anchor" href="#A-few-conclusions" aria-hidden="true"><span class="octicon octicon-link"></span></a>A few conclusions<a class="anchor-link" href="#A-few-conclusions"> </a>
 </h3>
 <ol>
 <li>Younger managers are more likely to subscribe.</li>
@@ -1279,8 +1279,8 @@ window.onload = wrap_img;
 <li>In general, older people are more likely to subscribe. Although this depends on the job.</li>
 <li>People with no credit are more likely to subscribe.</li>
 </ol>
-<h1 id="Correlation-Heat-Map:">
-<a class="anchor" href="#Correlation-Heat-Map:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlation Heat Map:<a class="anchor-link" href="#Correlation-Heat-Map:"> </a>
+<h1 id="Correlation-Heat-Map">
+<a class="anchor" href="#Correlation-Heat-Map" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlation Heat Map<a class="anchor-link" href="#Correlation-Heat-Map"> </a>
 </h1>
 <h2 id="What-is-correlation?">
 <a class="anchor" href="#What-is-correlation?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is correlation?<a class="anchor-link" href="#What-is-correlation?"> </a>
@@ -1334,8 +1334,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="A-few-conclusions:">
-<a class="anchor" href="#A-few-conclusions:" aria-hidden="true"><span class="octicon octicon-link"></span></a>A few conclusions:<a class="anchor-link" href="#A-few-conclusions:"> </a>
+<h2 id="A-few-conclusions">
+<a class="anchor" href="#A-few-conclusions" aria-hidden="true"><span class="octicon octicon-link"></span></a>A few conclusions<a class="anchor-link" href="#A-few-conclusions"> </a>
 </h2>
 <p>Before anything, please note that this matrix is symmetric and the diagonals are all 1 because it's the correlation between the vector and itself (not to be confused with autocorrelation which is used in signal processing).</p>
 <ol>
@@ -2404,8 +2404,8 @@ The percentage of unknown values in class yes:  5.067120438646247
 <p>GridSearchCV is an important method to estimate these parameters. However, we need to first train the model.</p>
 <p>GridSearchCV implements a “fit” and a “score” method. It also implements “predict”, “predict_proba”, “decision_function”, “transform” and “inverse_transform” if they are implemented in the estimator used.</p>
 <p>The parameters of the estimator used to apply these methods are optimized by cross-validated grid-search over a parameter grid.</p>
-<h2 id="Splitting-into-train-and-test-datasets:">
-<a class="anchor" href="#Splitting-into-train-and-test-datasets:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Splitting into train and test datasets:<a class="anchor-link" href="#Splitting-into-train-and-test-datasets:"> </a>
+<h2 id="Splitting-into-train-and-test-datasets">
+<a class="anchor" href="#Splitting-into-train-and-test-datasets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Splitting into train and test datasets<a class="anchor-link" href="#Splitting-into-train-and-test-datasets"> </a>
 </h2>
 </div>
 </div>
@@ -2455,8 +2455,8 @@ Total: 57546
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Training-a-Random-Forest-classifier:">
-<a class="anchor" href="#Training-a-Random-Forest-classifier:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training a Random Forest classifier:<a class="anchor-link" href="#Training-a-Random-Forest-classifier:"> </a>
+<h2 id="Training-a-Random-Forest-classifier">
+<a class="anchor" href="#Training-a-Random-Forest-classifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training a Random Forest classifier<a class="anchor-link" href="#Training-a-Random-Forest-classifier"> </a>
 </h2>
 <p>Here, I train a random forest classifier and perform grid search to select the best parameters (n_estimators and max_features).</p>
 
@@ -2516,8 +2516,8 @@ Total: 57546
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Model-Evaluation:">
-<a class="anchor" href="#Model-Evaluation:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation:<a class="anchor-link" href="#Model-Evaluation:"> </a>
+<h1 id="Model-Evaluation">
+<a class="anchor" href="#Model-Evaluation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation<a class="anchor-link" href="#Model-Evaluation"> </a>
 </h1>
 </div>
 </div>
@@ -2647,8 +2647,8 @@ Total: 57546
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The values that reflect a positive model are the ones on the diagonal (7427 and 9022). This means that the real label and the predicted one are the same (correct classification).</p>
-<h2 id="F-score,-Precision-and-Recall:">
-<a class="anchor" href="#F-score,-Precision-and-Recall:" aria-hidden="true"><span class="octicon octicon-link"></span></a>F-score, Precision and Recall:<a class="anchor-link" href="#F-score,-Precision-and-Recall:"> </a>
+<h2 id="F-score,-Precision-and-Recall">
+<a class="anchor" href="#F-score,-Precision-and-Recall" aria-hidden="true"><span class="octicon octicon-link"></span></a>F-score, Precision and Recall<a class="anchor-link" href="#F-score,-Precision-and-Recall"> </a>
 </h2>
 </div>
 </div>
@@ -2750,8 +2750,8 @@ Recall: 0.9536507744954612
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusion:">
-<a class="anchor" href="#Conclusion:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion:<a class="anchor-link" href="#Conclusion:"> </a>
+<h1 id="Conclusion">
+<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
 </h1>
 <p>This was an example of applied machine learning. It uses a dataset that includes customers and the goal is to check whether the client will subscribe or not. It is a fundamental example of applied machine learning that is used in data science domains. The data was unbalanced and we tackled this problem by using a technique called a mix of oversampling and cleaning.</p>
 <p>Thank you for reading this and I hope you enjoyed it!</p>
@@ -2771,7 +2771,7 @@ Recall: 0.9536507744954612
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/blog/machine%20learning/jupyter/ai/2020/01/28/RF-classifier.html" hidden></a>
+</script><a class="u-url" href="/blog/2020/01/28/RF-classifier.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
